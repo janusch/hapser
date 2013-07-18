@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  monday: false
+  tuesday: false
+  wednesday: false
+  thursday: false
+  friday: false
+  week: 
+  user: 
+
+two:
+  monday: false
+  tuesday: false
+  wednesday: false
+  thursday: false
+  friday: false
+  week: 
+  user: 

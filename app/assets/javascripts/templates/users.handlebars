@@ -1,0 +1,26 @@
+<div class="container-fluid">
+  <h2>Medarbejder</h2>
+  <div class="row-fluid">
+    <div class="span4">
+      <table class="table">
+        <thead>
+        {{partial "addUser"}}
+        </thead>
+        <tr>
+      <th>Navn</th>
+      <th>Næste tjans</th>
+      <th>Næste ferie</th>
+    </tr>
+        {{#each model}}
+        <tr>
+          <td>{{#linkTo 'user' this}}{{name}}{{/linkTo}}</td>
+          <td>{{nextTurnWeek}}</td>
+        <tr>
+        {{/each}}
+      </table>
+    </div>
+    <div class="span8">
+    {{outlet}}
+    </div>
+  </div>
+</div>

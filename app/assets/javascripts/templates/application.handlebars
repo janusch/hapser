@@ -1,0 +1,40 @@
+<div class="container-fluid"> 
+  <header>
+    <h1>{{title}}</h1>
+  </header>
+  <div class="navbar">
+    <div class="navbar-inner">
+      <div class="container-fluid">
+        <a class="brand" href="#">Vetvision</a>
+        <ul class="nav">
+          <li>{{#linkTo 'weeks'}}Uge Oversigt{{/linkTo}}</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  {{outlet}}
+  <div>
+    <div id="notes" class="collapse">
+      <h5>Opgaver</h5>
+      <ul>
+        <li>Indkøb af frokost + frugt</li>
+        <li>Husk at tjekke de varer du modtager</li>
+        <li>Sæt frokost frem og afrydning</li>
+        <li>Tømning af skraldespanden</li>
+        <li>Opvaskemaskine sættes igang og tømmes</li>
+        <li>Kaffemaskine rengøring dagligt og ugenligt (manual ligger sammen med kaffen under maskinen)</li>
+      </ul>
+    </div>
+    <button type="button" class="tasks btn btn-info btn-small" data-toggle="collapse" data-target="#notes">
+      Chef Tasks
+    </button>
+  </div>
+  <footer>
+    <div class="issue-link">
+      <a href="http://www.github.com/Vetvision/Haps/issues/new" class="btn btn-success btn-small">Report Bug</a>
+    </div>
+    <div>
+      &copy; 2013 Vetvision
+    </div>
+  </footer>
+</div>

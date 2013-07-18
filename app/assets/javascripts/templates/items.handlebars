@@ -1,0 +1,35 @@
+<h2>Inkøbsliste</h2>
+<div class="input-prepend input-append">
+  {{view Haps.NumberField class="input-mini add-on" id="count" value="1" min="1" max="99" valueBinding="newItemCount"}}
+  {{view Ember.TextField id="newItem" placeholder="Tilføj noget lækkert" valueBinding="newItem" action="addItem"}}
+  <span class="add-on" ><button class="btn-small addItem" {{action 'addItem'}}>Add</button></span>
+</div>
+<hr>
+  <table class="table table-striped">
+    <tr>
+      <th>Count</th>
+      <th>Title</th>
+      <th>Added:</th>
+      <th>Remove</th>
+      <th>Complete</th>
+      <th class="hidden-phone">Completed:</th>
+    </tr>
+    {{#unless isError}}
+    {{#each controller itemController="item"}}
+    {{#if title}}
+    <tr>
+      <td>{{count}}</td>
+      <td>{{title}}</td>
+      <td>{{fromNow createdAt createdAtBinding="createdAt"}}</td>
+      <td><button class="btn btn-warning btn-small icon-remove" {{action "removeItem"}} class="destroy"></button></td>
+      <td {{bindAttr class="isCompleted:completed"}}>
+        {{view Ember.Checkbox checkedBinding="isCompleted" class="toggle checkbox"}}
+      </td>
+      <td class="hidden-phone">{{fromNow completedAt}}</td>
+    </tr>
+    {{else}}
+    <p>Listen er tom. Tjek køleskabet!</p>
+    {{/if}}
+    {{/each}}
+    {{/unless}}
+  </table>

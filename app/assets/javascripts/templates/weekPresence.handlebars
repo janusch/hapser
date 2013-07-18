@@ -1,0 +1,22 @@
+<table class="table">
+  <tr>
+    <th>User</th>
+    <th>Monday</th>
+    <th>Tuesday</th>
+    <th>Wednesday</th>
+    <th>Thursday</th>
+    <th>Friday</th>
+    <th></th>
+    {{log user}}
+ {{!#each user}}
+  </tr>
+    <td>{{!Haps.current_user.uid}}{{user.uid userBinding="weekPresence.user.uid"}}</td>
+    <td>{{input type=checkbox checked=model.monday class="toggle checkbox"}}</td>
+    <td>{{input type=checkbox checked=model.tuesday class="toggle checkbox"}}</td>
+    <td>{{input type=checkbox checked=model.wednesday class="toggle checkbox"}}</td>
+    <td>{{input type=checkbox checked=model.thursday class="toggle checkbox"}}</td>
+    <td>{{input type=checkbox checked=model.friday class="toggle checkbox"}}</td>
+    <td><button class="btn-small" {{action 'save'}}>Save</button></td>
+  </tr>
+    {{!/each}}
+</table>

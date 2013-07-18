@@ -1,0 +1,18 @@
+<div class="container-fluid">
+  <h2>Overview</h2>
+  <div class="row-fluid">
+    <div class="span4">
+      {{view Haps.SelectRouteView}}
+    </div>
+    <div>
+      {{#each week in controller}}
+      {{#linkTo "week" week}} {{ week.number }}{{/linkTo}}
+      {{/each}}
+    </div>
+  </div>
+  <div class="row-fluid">
+    <div class="span8">
+    {{outlet}}
+    </div>
+  </div>
+</div>
